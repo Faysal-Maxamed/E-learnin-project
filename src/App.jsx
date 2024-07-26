@@ -80,6 +80,7 @@ const App = () => {
             <Route path="/home" element={user ? <Home /> : <Navigate to="/login" />} />
             <Route path="/about-us" element={user ? <AboutUs /> : <Navigate to="/login" />} />
             <Route path="/courses" element={user ? <Courses /> : <Navigate to="/login" />} />
+            <Route path="/dashboard" element={<Dashboard user={user} setUser={setUser} onLogout={handleLogout} />} />
             <Route path="/courses/:courseId" element={user ? <CourseDetails /> : <Navigate to="/login" />} />
             <Route path="/courses/:courseId/lesson/:lessonId" element={user ? <Lesson /> : <Navigate to="/login" />} />
             <Route path="/profile" element={user ? <Profile user={user} setUser={setUser} /> : <Navigate to="/login" />} />
