@@ -81,6 +81,7 @@ const App = () => {
             <Route path="/about-us" element={user ? <AboutUs /> : <Navigate to="/login" />} />
             <Route path="/courses" element={user ? <Courses /> : <Navigate to="/login" />} />
             <Route path="/form1/:courseId/lessons" element={user ? <F1Lessons /> : <Navigate to="/login" />} />
+            <Route path="/form2" element={user ? <Form2 /> : <Navigate to="/login" />} />
             <Route path="/dashboard" element={<Dashboard user={user} setUser={setUser} onLogout={handleLogout} />} />
             <Route path="/courses/:courseId" element={user ? <CourseDetails /> : <Navigate to="/login" />} />
             <Route path="/courses/:courseId/lesson/:lessonId" element={user ? <Lesson /> : <Navigate to="/login" />} />
