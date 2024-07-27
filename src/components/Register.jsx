@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = ({ onRegister }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    role: '',
+    fullName: '',
+    age: '',
+    address: '',
+    phone: '',
     email: '',
-    password: ''
+    password: '',
+    district: '',
+    school: '',
+    class: ''
   });
-
-  useEffect(() => {
-    const savedFormData = localStorage.getItem('formData');
-    if (savedFormData) {
-      setFormData(JSON.parse(savedFormData));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('formData', JSON.stringify(formData));
-  }, [formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,22 +26,93 @@ const Register = ({ onRegister }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+      <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-3xl font-bold mb-4 text-center">Register</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="name">Name</label>
+            <label className="block mb-2 font-bold" htmlFor="fullName">Full Name</label>
             <input
               className="w-full p-2 border border-gray-300 rounded"
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
               required
             />
           </div>
-        
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="age">Age</label>
+            <input
+              className="w-full p-2 border border-gray-300 rounded"
+              type="number"
+              id="age"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="address">Address</label>
+            <input
+              className="w-full p-2 border border-gray-300 rounded"
+              type="text"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="phone">Phone</label>
+            <input
+              className="w-full p-2 border border-gray-300 rounded"
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="district">District</label>
+            <input
+              className="w-full p-2 border border-gray-300 rounded"
+              type="text"
+              id="district"
+              name="district"
+              value={formData.district}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="school">School</label>
+            <input
+              className="w-full p-2 border border-gray-300 rounded"
+              type="text"
+              id="school"
+              name="school"
+              value={formData.school}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="class">Class</label>
+            <input
+              className="w-full p-2 border border-gray-300 rounded"
+              type="text"
+              id="class"
+              name="class"
+              value={formData.class}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div className="mb-4">
             <label className="block mb-2 font-bold" htmlFor="email">Email</label>
             <input
