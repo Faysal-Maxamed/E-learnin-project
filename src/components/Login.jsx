@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userType, setUserType] = useState('student');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = onLogin(email, password, userType);
-    if (success) {
-      navigate('/home');
-    }
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        onLogin(user);
+        navigate('/home');
+      })
+      .catch((error) => {
+        console.error("Login error:", error);
+        toast.error('Invalid credentials');
+      });
   };
 
   return (
@@ -20,19 +29,6 @@ const Login = ({ onLogin }) => {
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-3xl font-bold mb-4 text-center">Login</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="userType">User Type</label>
-            <select
-              id="userType"
-              name="userType"
-              value={userType}
-              onChange={(e) => setUserType(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
-            >
-              <option value="student">Student</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
           <div className="mb-4">
             <label className="block mb-2 font-bold" htmlFor="email">Email</label>
             <input
@@ -63,6 +59,7 @@ const Login = ({ onLogin }) => {
           <a href="/register" className="text-blue-500 hover:underline">Don't have an account? Register</a>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

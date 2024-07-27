@@ -11,6 +11,7 @@ const lessonsData = {
   2: [
     { id: 1, title: 'Lesson A', videoUrl: 'https://www.example.com/lessonA.mp4', description: 'Description for Lesson A' },
     { id: 2, title: 'Lesson B', videoUrl: 'https://www.example.com/lessonB.mp4', description: 'Description for Lesson B' },
+    { id: 3, title: 'Lesson C', videoUrl: 'https://www.example.com/lessonC.mp4', description: 'Description for Lesson C' },
     { id: 3, title: 'Lesson C', videoUrl: 'https://www.example.com/lessonC.mp4', description: 'Description for Lesson C' }
   ]
   // Add more lessons as needed
@@ -22,18 +23,7 @@ const CourseDetails = () => {
 
   return (
     <div className="container mx-auto p-4 my-8">
-      <h2 className="text-3xl font-bold mb-8">Course {courseId} Lessons</h2>
-      <div className="space-y-4">
-        {lessons.map((lesson, index) => (
-          <Link
-            key={index}
-            to={`/courses/${courseId}/lesson/${lesson.id}`}
-            className="block p-4 bg-yellow-200 rounded-lg hover:bg-yellow-300 hover:shadow-lg transition"
-          >
-            {lesson.title}
-          </Link>
-        ))}
-      </div>
+
     </div>
   );
 };

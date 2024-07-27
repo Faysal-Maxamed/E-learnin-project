@@ -34,7 +34,7 @@ function SignUp() {
           <button type="submit" className="w-full px-4 py-2 bg-green-500 text-white rounded">Sign Up</button>
         </form>
         <div className="mt-4 text-center">
-          Already have an account? <Link to="/login" className="text-blue-500">Login</Link>
+          Already have an account? <Link to="/login" className="text-green-300">Login</Link>
         </div>
       </div>
     </div>

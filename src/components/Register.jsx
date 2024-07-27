@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = ({ onRegister }) => {
   const [formData, setFormData] = useState({
     fullName: '',
-    age: '',
-    address: '',
-    phone: '',
     email: '',
-    password: '',
-    district: '',
-    school: '',
-    class: ''
+    password: ''
   });
 
   const handleChange = (e) => {
@@ -21,7 +15,21 @@ const Register = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister(formData);
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        const newUser = {
+          ...formData,
+          uid: user.uid,
+        };
+        localStorage.setItem('users', JSON.stringify([...JSON.parse(localStorage.getItem('users') || '[]'), newUser]));
+        onRegister(newUser);
+        alert('Registered successfully! Please login.');
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   return (
@@ -37,78 +45,6 @@ const Register = ({ onRegister }) => {
               id="fullName"
               name="fullName"
               value={formData.fullName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="age">Age</label>
-            <input
-              className="w-full p-2 border border-gray-300 rounded"
-              type="number"
-              id="age"
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="address">Address</label>
-            <input
-              className="w-full p-2 border border-gray-300 rounded"
-              type="text"
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="phone">Phone</label>
-            <input
-              className="w-full p-2 border border-gray-300 rounded"
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="district">District</label>
-            <input
-              className="w-full p-2 border border-gray-300 rounded"
-              type="text"
-              id="district"
-              name="district"
-              value={formData.district}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="school">School</label>
-            <input
-              className="w-full p-2 border border-gray-300 rounded"
-              type="text"
-              id="school"
-              name="school"
-              value={formData.school}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 font-bold" htmlFor="class">Class</label>
-            <input
-              className="w-full p-2 border border-gray-300 rounded"
-              type="text"
-              id="class"
-              name="class"
-              value={formData.class}
               onChange={handleChange}
               required
             />
@@ -137,10 +73,10 @@ const Register = ({ onRegister }) => {
               required
             />
           </div>
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition duration-200">Register</button>
+          <button className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition duration-200" type="submit">Register</button>
         </form>
         <div className="mt-4 text-center">
-          <Link to="/login" className="text-blue-500 hover:underline">Already have an account? Login</Link>
+          <a href="/login" className="text-blue-500 hover:underline">Already have an account? Login</a>
         </div>
       </div>
     </div>
