@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import lesson1Arabic from '../video/Math video/math.chp1.mp4';
 import { FaPlayCircle, FaBars } from 'react-icons/fa'; // Assuming FaBars is the menu bar icon
 
 // Expanded lesson data for each course
