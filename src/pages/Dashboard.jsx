@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHome, faBook, faUsers, faUserPlus, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import Profile from '../Components/Profile';
+import RegisterAdmin from '../Components/RegisterAdmin';
+import UsersList from '../Components/UsersList';
 
 const Dashboard = ({ user, setUser, onLogout }) => {
   const navigate = useNavigate();

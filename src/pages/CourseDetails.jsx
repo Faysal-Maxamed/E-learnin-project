@@ -1,17 +1,16 @@
-// src/pages/CourseDetails.jsx
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const lessonsData = {
   1: [
-    { id: 1, title: 'Lesson 1', videoUrl: 'https://www.example.com/lesson1.mp4', description: 'Description for Lesson 1' },
-    { id: 2, title: 'Lesson 2', videoUrl: 'https://www.example.com/lesson2.mp4', description: 'Description for Lesson 2' },
-    { id: 3, title: 'Lesson 3', videoUrl: 'https://www.example.com/lesson3.mp4', description: 'Description for Lesson 3' }
+    { id: 1, title: 'Lesson 1', videoUrl: 'https://youtu.be/jndoZU9fpPc?list=PLA2sIXNgNKf5o-qzU7yrC7USJhq__1iDj', description: 'Description for Lesson 1' },
+    { id: 2, title: 'Lesson 2', videoUrl: 'https://www.youtube.com/watch?list=PLA2sIXNgNKf5o-qzU7yrC7USJhq__1iDj&v=jndoZU9fpPc&feature=youtu.be', description: 'Description for Lesson 2' },
+    { id: 3, title: 'Lesson 3', videoUrl: 'https://www.youtube.com/watch?list=PLA2sIXNgNKf5o-qzU7yrC7USJhq__1iDj&v=jndoZU9fpPc&feature=youtu.be', description: 'Description for Lesson 3' },
   ],
   2: [
-    { id: 1, title: 'Lesson A', videoUrl: 'https://www.example.com/lessonA.mp4', description: 'Description for Lesson A' },
-    { id: 2, title: 'Lesson B', videoUrl: 'https://www.example.com/lessonB.mp4', description: 'Description for Lesson B' },
-    { id: 3, title: 'Lesson C', videoUrl: 'https://www.example.com/lessonC.mp4', description: 'Description for Lesson C' }
+    { id: 1, title: 'Lesson A', videoUrl: 'https://www.youtube.com/watch?list=PLA2sIXNgNKf5o-qzU7yrC7USJhq__1iDj&v=jndoZU9fpPc&feature=youtu.be', description: 'Description for Lesson A' },
+    { id: 2, title: 'Lesson B', videoUrl: 'https://www.youtube.com/watch?list=PLA2sIXNgNKf5o-qzU7yrC7USJhq__1iDj&v=jndoZU9fpPc&feature=youtu.be', description: 'Description for Lesson B' },
+    { id: 3, title: 'Lesson C', videoUrl: 'https://www.youtube.com/watch?list=PLA2sIXNgNKf5o-qzU7yrC7USJhq__1iDj&v=jndoZU9fpPc&feature=youtu.be', description: 'Description for Lesson C' },
   ]
   // Add more lessons as needed
 };
@@ -22,15 +21,12 @@ const CourseDetails = () => {
 
   return (
     <div className="container mx-auto p-4 my-8">
-      <h2 className="text-3xl font-bold mb-8">Course {courseId} Lessons</h2>
-      <div className="space-y-4">
-        {lessons.map((lesson, index) => (
-          <Link
-            key={index}
-            to={`/courses/${courseId}/lesson/${lesson.id}`}
-            className="block p-4 bg-yellow-200 rounded-lg hover:bg-yellow-300 hover:shadow-lg transition"
-          >
-            {lesson.title}
+      <h2 className="text-3xl font-bold mb-8">Course {courseId}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {lessons.map((lesson) => (
+          <Link key={lesson.id} to={`/courses/${courseId}/lesson/${lesson.id}`} className="bg-white p-4 rounded-lg shadow hover:bg-gray-100">
+            <h3 className="text-xl font-semibold mb-2">{lesson.title}</h3>
+            <p className="text-gray-600">{lesson.description}</p>
           </Link>
         ))}
       </div>

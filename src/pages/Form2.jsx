@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Slider from 'react-slick';
-// import "slick-carousel/slick/slick.css"; 
-// import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 // Placeholder images (replace with actual image paths or URLs)
-import arabicImage from '../images/1.jpg';
-import englishImage from '../images/1.jpg';
-import mathImage from '../images/1.jpg';
-import physicsImage from '../images/1.jpg';
-import chemistryImage from '../images/1.jpg';
-import historyImage from '../images/1.jpg';
-import biologyImage from '../images/1.jpg';
-import geographyImage from '../images/1.jpg';
+import arabicImage from '../images/member1.jpeg';
+import englishImage from '../images/member1.jpeg';
+import mathImage from '../images/member1.jpeg';
+import physicsImage from '../images/member1.jpeg';
+import chemistryImage from '../images/f1.chem.jpeg';
+import historyImage from '../images/member1.jpeg';
+import biologyImage from '../images/member1.jpeg';
+import geographyImage from '../images/member1.jpeg';
 
 const form2Data = [
   { id: 1, name: 'دورة اللغة العربية', description: 'ستتعلم في هذه الدورة جميع دروس اللغة العربية لجميع صفوف المرحلة الثانوية', image: arabicImage },
