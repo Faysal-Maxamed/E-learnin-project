@@ -194,7 +194,7 @@ const HomePage = () => {
               <li className="mb-2"><a href="#" className="hover:text-green-500">Sign In</a></li>
             </ul>
           </div>
-          <div className="w-1/5 mb-4">
+          <div className=" mb-4">
             <h2 className="text-xl font-bold mb-2">Let's Stay Connected</h2>
             <p className="mb-4">Enter your email to unlock 10% OFF.</p>
             <form className="flex flex-col space-y-2">
