@@ -59,16 +59,13 @@ const AboutUs = () => {
         </div>
         <div className="md:w-1/2 md:pl-8">
           <h2 className="text-3xl font-bold mb-4 text-green-500">About Us</h2>
-          <p className="mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra tellus nec eleifend tempor.
-            Vestibulum id magna vel urna posuere semper a vel augue. Nulla facilisi. Vestibulum dapibus sapien
-            non ex fermentum, ut congue lorem dapibus.
-          </p>
-          <p>
-            Duis interdum, orci eget varius efficitur, ipsum purus vestibulum nisi, nec maximus ipsum lorem ut
-            lacus. Morbi a velit sed erat faucibus vehicula. Sed feugiat orci sit amet felis consequat, at
-            eleifend ex faucibus.
-          </p>
+         <p className="mb-4">
+  Smart-College, an e-learning website that started in 2024, offers a diverse range of online courses to cater to various educational needs. Our platform provides a seamless and interactive learning experience, enabling students to gain knowledge and skills from the comfort of their homes.
+</p>
+<p>
+  With Smart-College, students can access high-quality educational content, engage in interactive lessons, and benefit from a supportive learning community. Our goal is to make education accessible and effective, empowering learners to achieve their academic and professional goals.
+</p>
+
         </div>
       </div>
 
