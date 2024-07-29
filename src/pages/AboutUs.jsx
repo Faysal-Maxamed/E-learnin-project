@@ -59,13 +59,16 @@ const AboutUs = () => {
         </div>
         <div className="md:w-1/2 md:pl-8">
           <h2 className="text-3xl font-bold mb-4 text-green-500">About Us</h2>
-         <p className="mb-4">
-  Smart-College, an e-learning website that started in 2024, offers a diverse range of online courses to cater to various educational needs. Our platform provides a seamless and interactive learning experience, enabling students to gain knowledge and skills from the comfort of their homes.
-</p>
-<p>
-  With Smart-College, students can access high-quality educational content, engage in interactive lessons, and benefit from a supportive learning community. Our goal is to make education accessible and effective, empowering learners to achieve their academic and professional goals.
-</p>
-
+          <p className="mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra tellus nec eleifend tempor.
+            Vestibulum id magna vel urna posuere semper a vel augue. Nulla facilisi. Vestibulum dapibus sapien
+            non ex fermentum, ut congue lorem dapibus.
+          </p>
+          <p>
+            Duis interdum, orci eget varius efficitur, ipsum purus vestibulum nisi, nec maximus ipsum lorem ut
+            lacus. Morbi a velit sed erat faucibus vehicula. Sed feugiat orci sit amet felis consequat, at
+            eleifend ex faucibus.
+          </p>
         </div>
       </div>
 
@@ -176,12 +179,12 @@ const AboutUs = () => {
           </div>
           <div className=" mb-4">
             <h2 className="text-xl font-bold mb-2">Let's Stay Connected</h2>
-            <p className="mb-4">Enter your email to unlock 10% OFF.</p>
+            <p className="mb-4 ">Enter your email to unlock 10% OFF.</p>
             <form className="flex flex-col space-y-2">
               <input className="p-2 rounded border border-gray-300" type="email" placeholder="Your Email" required />
               <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
             </form>
-            <div className="mt-4">
+            <div className="mt-4 ml-12">
               <h2 className="text-xl font-bold mb-2">Follow us</h2>
               <div className="flex space-x-4">
                 <a href="https://www.pinterest.com" className="text-green-600 hover:text-green-500"><FaWhatsapp size={24} /></a>
