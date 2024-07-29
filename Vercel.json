@@ -1,20 +1,17 @@
-
 {
-  "version": 2,
-  "name": "my-react-vite-app",
   "builds": [
     {
-      "src": "vite.config.js",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
