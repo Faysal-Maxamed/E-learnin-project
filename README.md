@@ -1,18 +1,7 @@
-# Tools Using :
-![firbase](https://github.com/user-attachments/assets/37a60c34-adc7-4652-8924-1b2a4219ff7c)
-
-# Users Registered :
-
-1. **Gmail: pheyzal@gmail.com**
+## login 
+ **Gmail: pheyzal@gmail.com**
   **Password: 123456**
-   
-2. **Gmail: Najiip601@gmail.com**
-  **Password: 1234567**
-   
-3. **Gmail:Moha312@gmail.com**
-   **Password: 123456**
-   
-
+  
 # E-Learning Website 🔥🔥
 
 The E-Learning Website is an open-source project designed to provide a comprehensive online learning platform. Users can explore various courses, join interactive lessons, and engage in discussions to enhance their knowledge. It helps learners delve into subjects of their interest, whether it's languages, science, technology, or arts. The platform fosters a collaborative learning environment for students, educators, and professionals.
