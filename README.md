@@ -4,12 +4,24 @@
   
 # E-Learning Website 🔥🔥
 
-The E-Learning Website is an open-source project designed to provide a comprehensive online learning platform. Users can explore various courses, join interactive lessons, and engage in discussions to enhance their knowledge. It helps learners delve into subjects of their interest, whether it's languages, science, technology, or arts. The platform fosters a collaborative learning environment for students, educators, and professionals.
-
+An online platform offering a wide range of courses across various subjects including Arabic, Chemistry, Physics, Geography, History, Math, English, and Biology. Users can navigate through courses, view lessons, and watch instructional videos.
 
 `CEO & CO-Founder E-Learning Website is: Faysal Maxamed Daahir`
-## Home Page
-![WhatsApp Image 2024-07-27 at 22 16 26_96a3bb58](https://github.com/user-attachments/assets/c1b1766d-68d6-43c9-84c3-7fc556afa88a)
+
+# Features
+
+- **HomePage**:An engaging overview of the platform, highlighting available courses and key features.
+- **AboutPage**: Detailed information about the platform, its mission, and its team.
+- **Courses Page**:A comprehensive list of available courses across various subjects, with descriptions and access to lessons.
+- **Lesson Pages**: Individual lesson pages with descriptions and integrated instructional videos.
+- **Contact**:  A form to send messages or inquiries to the platform’s support team.
+- **Profile page t**: User profiles with personal information.
+- **User Authentication**: Secure registration and login functionality for users.
+- **Responsive Design**: Ensures usability on both desktop and mobile devices.
+- **Form Validation**: Ensures all forms are correctly filled before submission.
+
+
+# Deployment Link: https://e-learnin-project.vercel.app/
 
 ## Installation
 
